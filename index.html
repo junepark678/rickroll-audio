@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Luck</title>
+</head>
+<body>
+    <div class="flex-container">
+        <audio src="rickroll.mp3" id="audio"></audio>
+        <h1 id="wordletext">Wordle</h1>
+        <button id="buttonplay">Play!</button>
+    </div>
+    <script defer>
+        var button = document.querySelector("#buttonplay");
+        var audio = document.querySelector("#audio");
+        var texta = document.querySelector("#wordletext");
+        var isplaying = false;
+        button.addEventListener("click", ()=>
+        {
+            if (isplaying) {
+                audio.pause();
+                isplaying = false;
+                button.innerHTML="Play!"
+                return;
+            }
+            button.innerHTML="Stop. Please Stop this."
+            audio.play();
+            texta.innerHTML = "Never gonna give this rickroll thing up."
+            isplaying = true;
+        });
+    </script>
+    <style>
+        .flex-container{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        h1{
+            color: green;
+        }
+        #buttonplay{
+            border: none;
+            background-color: darkgreen;
+            padding:0.4em 0.5em;
+            color: lime;
+        }
+    </style>
+</body>
+</html>
